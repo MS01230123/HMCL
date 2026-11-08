@@ -1,0 +1,25 @@
+#此工作流将使用Ant构建Java项目
+#有关详细信息，请参阅： https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-ant
+
+名称：Java CI
+
+在……之上：
+推：
+分支机构：["主要"]
+pull_request：
+分支机构：["主要"]
+
+作业：
+构建:
+
+run-on:ubuntu-latest
+
+步骤：
+-使用：操作/结帐@v4
+-名称：设置JDK11
+用法：操作/setup-java@v4
+和……一起:
+没有任何的: '11'
+分布: 的
+    - 姓名: 使用Ant构建
+      run: ant -noinput -buildfile build.xml
